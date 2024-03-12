@@ -220,7 +220,8 @@ const App = () => {
 
     socket.on('force-logout', (data) => {
       console.log('Force logout:', data.message);
-      alert("forec logout")
+      alert("forec logout");
+      handleLogout();
       setIsLoggedIn(false);
     });
 
