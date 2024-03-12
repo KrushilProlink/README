@@ -266,7 +266,7 @@ const App = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('https://app-1-voux.onrender.com/logout', {}, { withCredentials: true });
+      await axios.post('https://app-1-voux.onrender.com/logout', { username }, { withCredentials: true });
       console.log('User logged out successfully');
 
       // Emit logout event
