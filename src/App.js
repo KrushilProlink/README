@@ -264,9 +264,23 @@ const App = () => {
     }
   };
 
+  // const handleLogout = async () => {
+  //   try {
+  //     await axios.post('https://app-1-voux.onrender.com/logout', { username }, { withCredentials: true });
+  //     console.log('User logged out successfully');
+
+  //     // Emit logout event
+  //     socket.emit('logout', { username });
+
+  //     // Handle logout, for example, set user as logged out
+  //   } catch (error) {
+  //     console.error('Error logging out:', error.response?.data || error.message);
+  //   }
+  // };
   const handleLogout = async () => {
     try {
-      await axios.post('https://app-1-voux.onrender.com/logout', { username }, { withCredentials: true });
+      // await axios.post('http://localhost:5201/logout', {}, { withCredentials: true });
+      await axios.post('https://app-1-voux.onrender.com/logout', { username: username }, { withCredentials: true });
       console.log('User logged out successfully');
 
       // Emit logout event
@@ -277,7 +291,6 @@ const App = () => {
       console.error('Error logging out:', error.response?.data || error.message);
     }
   };
-
   return (
     <div>
       <label>
