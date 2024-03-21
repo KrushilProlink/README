@@ -193,6 +193,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
 
+// const socket = io('http://localhost:5200');
 const socket = io('https://app-1-voux.onrender.com');
 
 const App = () => {
@@ -234,6 +235,7 @@ const App = () => {
     try {
       await axios.post(
         'https://app-1-voux.onrender.com/register',
+        // ' http://localhost:5201/register',
         { username, password },
         { withCredentials: true }
       );
@@ -247,6 +249,7 @@ const App = () => {
     try {
       const response = await axios.post(
         'https://app-1-voux.onrender.com/login',
+        // 'http://localhost:5201/login',
         { username, password },
         { withCredentials: true }
       );
@@ -282,6 +285,7 @@ const App = () => {
     try {
       // await axios.post('http://localhost:5201/logout', {}, { withCredentials: true });
       await axios.post('https://app-1-voux.onrender.com/logout', { username: username }, { withCredentials: true });
+      // await axios.post('http://localhost:5201/logout', { username: username }, { withCredentials: true });
       console.log('User logged out successfully');
 
       // Emit logout event
